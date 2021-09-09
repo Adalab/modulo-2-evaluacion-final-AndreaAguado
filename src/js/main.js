@@ -35,7 +35,7 @@ function requestToAPI(){
 }
 
 function displayResults(){
-    let html = '';
+  let html = '';
   for (let i = 0; i < shows.length; i++) {
     html += `<li class="list_item js_list_item">`;
     if(images[i].medium === null){
