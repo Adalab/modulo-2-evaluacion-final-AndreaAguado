@@ -34,12 +34,16 @@ function requestToAPI(){
     });
 }
 
-
-let html = '';
 function displayResults(){
+    let html = '';
   for (let i = 0; i < shows.length; i++) {
     html += `<li class="list_item js_list_item">`;
-    html += `<img class="img" src=${images[i].medium} alt="movie cover">`;
+    if(images[i].medium === null){
+      html += `<img class="img" src="https://via.placeholder.com/210x295/ffffff/666666/?text=TV" alt="movie cover">`;
+    }
+    else{
+      html += `<img class="img" src=${images[i].medium} alt="movie cover">`;
+    }
     html += `  <h2 class="movie_title">${showTitles[i]}</h2>`;
     html += `<h2 class="movie_title">Movie Title</h2>`;
     html += `</li>`;
