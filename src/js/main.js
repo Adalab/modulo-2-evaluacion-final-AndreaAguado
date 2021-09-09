@@ -17,14 +17,19 @@ function urlMaker(){
   return url;
 }
 
-// function requestToAPI(){
-//     url=urlMaker();
-//   fetch()
-// }
+function requestToAPI(){
+  url=urlMaker();
+  fetch(url)
+    .then(response => response.json())
+    .then(data => {
+      console.log(data);
+    });
+}
 
-function handleInput(){
-  console.log(input.value);
+function handleInput(ev){
+  ev.preventDefault();
   urlMaker();
+  requestToAPI();
 }
 
 input.addEventListener('change',handleInput);
