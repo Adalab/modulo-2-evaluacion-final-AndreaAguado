@@ -12,8 +12,6 @@ let url;
 function urlMaker(){
   url='//api.tvmaze.com/search/shows?q=';
   url += input.value;
-  console.log(input.value);
-  console.log(url);
   return url;
 }
 
@@ -26,10 +24,11 @@ function requestToAPI(){
     });
 }
 
-function handleInput(ev){
+function handleButton(ev){
   ev.preventDefault();
   urlMaker();
   requestToAPI();
 }
 
-input.addEventListener('change',handleInput);
+
+button.addEventListener('click',handleButton);
