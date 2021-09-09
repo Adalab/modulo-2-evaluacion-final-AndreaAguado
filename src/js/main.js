@@ -38,7 +38,7 @@ function displayResults(){
   let html = '';
   for (let i = 0; i < shows.length; i++) {
     html += `<li class="list_item js_list_item">`;
-    if(images[i].medium === null){
+    if(images[i] === null){
       html += `<img class="img" src="https://via.placeholder.com/210x295/ffffff/666666/?text=TV" alt="movie cover">`;
     }
     else{
