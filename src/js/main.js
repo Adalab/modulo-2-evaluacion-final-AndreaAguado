@@ -29,16 +29,23 @@ function requestToAPI(){
   console.log(shows);
 }
 
-// let html = '';
-// function displayResults(){
-//   html += `<li class="list_item js_list_item">`;
-// }
+
+let html = '';
+function displayResults(){
+  html += `<li class="list_item js_list_item">`;
+  //   html += `<img class="img" src="${}" alt="movie cover">`;
+  //   html += `  <h2 class="movie_title">${}</h2>`;
+  html += `<h2 class="movie_title">Movie Title</h2>`;
+  html += `</li>`;
+  list.innerHTML = html;
+}
 
 
 function handleButton(ev){
   ev.preventDefault();
   urlMaker();
   requestToAPI();
+  displayResults();
 }
 
 
