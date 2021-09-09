@@ -9,21 +9,41 @@
     <!-- <link rel="icon" href="./assets/images/favicon.png" /> -->
   </head>
 
-  <body>
-    <div class="page">
+  <body class="body">
+    <!-- <div class="page"> -->
       <header class="header">
       <h1 class="header__title">Buscador de series</h1>
       </header>
 
       <main class="main">
-
+      <section class="left_section">
+          <form class="form" action="">
+              <input class="input js_input" type="text">
+              <input class="submit-button js_submit_button" type="submit" value="Buscar">
+          </form>
+          <h2 class="title">Mis series favoritas:</h2>
+          <ul class="favs_list js_favs_list">
+              <li class="list_item js_list_item">
+                  <img class="img" src="" alt="movie cover">
+                  <h2 class="movie_title">Movie Title</h2>
+              </li>
+          </ul>
+      </section>
+      <section class="right_section">
+          <ul class="list js_list">
+          <li class="list_item js_list_item fav">
+              <img class="img" src="" alt="movie cover">
+              <h2 class="movie_title">Movie Title</h2>
+          </li>
+          </ul>
+      </section>
       </main>
 
       <footer class="footer">
       <small class="footer__small">&copy; Andrea Aguado 2021 </small>
       </footer>
 
-    </div>
+    <!-- </div> -->
     <script src="./assets/js/main.js"></script>
   </body>
 </html>
