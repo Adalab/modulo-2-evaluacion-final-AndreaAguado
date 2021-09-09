@@ -14,6 +14,8 @@ function urlMaker(){
 }
 
 let shows = [];
+let images = [];
+let showTitles = [];
 function requestToAPI(){
   url=urlMaker();
   fetch(url)
@@ -22,8 +24,12 @@ function requestToAPI(){
       console.log(data);
       for (let i = 0; i < data.length; i++) {
         shows[i]=data[i].show;
+        images[i]=shows[i].image;
+        showTitles[i]=shows[i].name;
       }
     console.log(shows);
+    console.log(images);
+    console.log(showTitles);
     displayResults();
     });
  
@@ -33,14 +39,16 @@ function requestToAPI(){
 
 let html = '';
 function displayResults(){
-    for (const show of shows) {
-        html += `<li class="list_item js_list_item">`;
-        html += `<img class="img" src="${show.name}" alt="movie cover">`;
-        // html += `  <h2 class="movie_title">${}</h2>`;
-        html += `<h2 class="movie_title">Movie Title</h2>`;
-        html += `</li>`;
-        list.innerHTML = html;
-    }
+   for (let i = 0; i < shows.length; i++) {
+    html += `<li class="list_item js_list_item">`;
+    html += `<img class="img" src=${images[i].medium} alt="movie cover">`;
+    html += `  <h2 class="movie_title">${showTitles[i]}</h2>`;
+    html += `<h2 class="movie_title">Movie Title</h2>`;
+    html += `</li>`;
+    list.innerHTML = html;
+   }
+
+    
 
 }
 
