@@ -99,7 +99,12 @@ function displayFavsList(){
   let html = '';
   for (const favorite of favorites) {
     html += `<li class="fav_item js_fav_item" id="${favorite.id}">`;
-    html += `<img class="img" src="${favorite.image.medium}" alt="movie cover">`;
+    if(favorite.image === null){
+      html += `<img class="img" src="https://via.placeholder.com/210x295/ffffff/666666/?text=TV"  alt="movie cover">`;
+    }
+    else{
+      html += `<img class="img" src="${favorite.image.medium}" alt="movie cover">`;
+    }
     html += `<h2 class="movie_title">${favorite.name}</h2>`;
     html += `</li>`;
   }
