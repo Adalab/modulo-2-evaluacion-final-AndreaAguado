@@ -61,7 +61,7 @@ function handleListItems(ev){
   const favorited = ev.currentTarget.id;
   const currentCard = ev.currentTarget;
   console.log(currentCard);
-  currentCard.classList.add('fav');
+  currentCard.classList.toggle('fav');
   console.log(favorited);
   const objetClicked = shows.find((show) => {
     return show.id === parseInt(favorited);
@@ -73,6 +73,9 @@ function handleListItems(ev){
   });
   if(favoritesFoundIndex === -1){
     favorites.push(objetClicked);
+  }
+  else{
+    favorites.splice(favoritesFoundIndex,1);
   }
   console.log(favorites);
   displayFavsList();
