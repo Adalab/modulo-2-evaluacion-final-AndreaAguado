@@ -1,11 +1,14 @@
 .body {
   height: 100vh;
   background-color: lightskyblue;
+  background-color: $light_blue;
+  color: $dark_brown;
 }
 .main {
   min-height: 70%;
   padding: 30px 30px 30px 30px;
-  background-color: lightpink;
+  background-color: $darkish_pink;
+  // background-color: #ffeeed;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -13,7 +16,7 @@
 
   .left_section {
     min-width: 30%;
-    background-color: chartreuse;
+    background-color: $light_yellow;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -48,7 +51,8 @@
   }
   .right_section {
     min-width: 70%;
-    background-color: crimson;
+    // background-color: crimson;
+    background-color: $light_pink;
   }
   .list {
     display: flex;
@@ -67,13 +71,11 @@
     }
   }
 
-  // .img {
-  //   height: 80%;
-  // }
-
   .fav {
     background-color: mediumvioletred;
+    background-color: $darkish_pink;
     color: aqua;
+    color: $light_blue;
     font-weight: bold;
   }
 }
