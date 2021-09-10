@@ -41,7 +41,7 @@ function displayResults(){
       html += `<li class="list_item js_list_item" id="${shows[i].id}">`;
     }
     if(shows[i].image === null){
-      html += `<img class="img" src="https://via.placeholder.com/210x295/ffffff/666666/?text=TV" alt="movie cover">`;
+      html += `<img class="img" src="https://via.placeholder.com/210x295/b5a899/736762/?text=TV" alt="movie cover">`;
     }
     else{
       html += `<img class="img" src=${shows[i].image.medium} alt="movie cover">`;
@@ -144,7 +144,7 @@ function displayFavsList(){
     for (const favorite of favorites) {
       html += `<li class="fav_item js_fav_item" id="${favorite.id}">`;
       if(favorite.image === null){
-        html += `<img class="img" src="https://via.placeholder.com/210x295/ffffff/666666/?text=TV"  alt="movie cover">`;
+        html += `<img class="img" src="https://via.placeholder.com/210x295/b5a899/736762/?text=TV"  alt="movie cover">`;
       }
       else{
         html += `<img class="img" src="${favorite.image.medium}" alt="movie cover">`;
