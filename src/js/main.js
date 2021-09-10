@@ -1,10 +1,8 @@
 'use strict';
 
 const input = document.querySelector('.js_input');
-
 const list = document.querySelector('.js_list');
 const favList = document.querySelector('.js_favs_list');
-
 const button = document.querySelector('.js_submit_button');
 
 let url;
@@ -115,18 +113,19 @@ function displayFavsList(){
     html += `<h2 class="movie_title">${favorite.name}</h2>`;
     html += `<button class="reset_button js_reset_button">X</button>`;
     html += `</li>`;
+    favList.innerHTML = html;
   }
 
-  favList.innerHTML = html;
-  resetButton = document.querySelectorAll('.js_reset_button');
-  listenResetButtons();
+  // favList.innerHTML = html;
+  // listenResetButtons();
 }
 
-function listenResetButtons(){
-  for (const reset of resetButton) {
-    reset.addEventListener('click',handleResetButton);
-  }
-}
+// function listenResetButtons(){
+//   resetButton = document.querySelectorAll('.js_reset_button');
+//   for (const reset of resetButton) {
+//     reset.addEventListener('click',handleResetButton);
+//   }
+// }
 
 
 function handleButton(ev){
@@ -136,7 +135,8 @@ function handleButton(ev){
 }
 
 function handleResetButton(ev){
-  
+  const toDelete = ev.currentTarget;
+  console.log(toDelete);
 }
 
 
