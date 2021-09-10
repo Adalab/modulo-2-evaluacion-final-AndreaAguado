@@ -24,7 +24,8 @@ function requestToAPI(){
         shows[i]=data[i].show;
       }
       console.log(shows);
-      displayResults();
+      // displayResults();
+      displayNoResults();
     });
 }
 
@@ -62,6 +63,20 @@ function listenFavs(){
   }
 }
 
+function displayNoResults(){
+  if(shows.length < 1){
+    let html = '';
+    html += `<li class="list_item js_list_item">`;
+    html += `No se encontraron resultados para "${input.value}"`;
+    html += `</li>`;
+    list.innerHTML = html;
+  }
+  else{
+    displayResults();
+  }
+}
+
+let favorites = [];
 function isFavorite(show) {
   const favoriteFound = favorites.find((fav) => {
     return fav.id === show.id;
@@ -73,9 +88,6 @@ function isFavorite(show) {
     return true;
   }
 }
-
-
-let favorites = [];
 
 function handleListItems(ev){
   const favorited = ev.currentTarget.id;
