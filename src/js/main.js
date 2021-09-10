@@ -103,7 +103,21 @@ function saveToLocalStorage(){
 
 function getFromLocalStorage(){
   let dataRetrieved = JSON.parse(localStorage.getItem('favorites'));
+  if(dataRetrieved === null){
+    // requestToAPI();
+    let html = '';
+    html += `<li class="fav_item js_fav_item">`;
+    html += `Aun no tienes favoritos`;
+    html += `</li>`;
+    favList.innerHTML = html;
+  }
+  else{
+    favorites = dataRetrieved;
+    displayFavsList();
+  }
 }
+
+getFromLocalStorage();
 
 function displayFavsList(){
   let html = '';
