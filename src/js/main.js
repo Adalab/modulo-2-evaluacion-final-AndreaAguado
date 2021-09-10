@@ -4,6 +4,7 @@ const input = document.querySelector('.js_input');
 const list = document.querySelector('.js_list');
 const favList = document.querySelector('.js_favs_list');
 const button = document.querySelector('.js_submit_button');
+let resetButton;
 
 let url;
 function urlMaker(){
@@ -99,7 +100,7 @@ function getFromLocalStorage(){
 
 getFromLocalStorage();
 
-let resetButton;
+// let resetButton;
 function displayFavsList(){
   let html = '';
   for (const favorite of favorites) {
@@ -111,27 +112,20 @@ function displayFavsList(){
       html += `<img class="img" src="${favorite.image.medium}" alt="movie cover">`;
     }
     html += `<h2 class="movie_title">${favorite.name}</h2>`;
-    html += `<button class="reset_button js_reset_button">X</button>`;
+    html += `<button class="reset_button js_reset_button" id="${favorite.id}">X</button>`;
     html += `</li>`;
     favList.innerHTML = html;
   }
-
   // favList.innerHTML = html;
-  // listenResetButtons();
+  resetButton;
+  listenResetButtons();
 }
 
-// function listenResetButtons(){
-//   resetButton = document.querySelectorAll('.js_reset_button');
-//   for (const reset of resetButton) {
-//     reset.addEventListener('click',handleResetButton);
-//   }
-// }
-
-
-function handleButton(ev){
-  ev.preventDefault();
-  urlMaker();
-  requestToAPI();
+function listenResetButtons(){
+  resetButton = document.querySelectorAll('.js_reset_button');
+  for (const reset of resetButton) {
+    reset.addEventListener('click',handleResetButton);
+  }
 }
 
 function handleResetButton(ev){
@@ -139,5 +133,11 @@ function handleResetButton(ev){
   console.log(toDelete);
 }
 
+
+function handleButton(ev){
+  ev.preventDefault();
+  urlMaker();
+  requestToAPI();
+}
 
 button.addEventListener('click',handleButton);
