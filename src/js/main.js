@@ -3,6 +3,7 @@
 const input = document.querySelector('.js_input');
 
 const list = document.querySelector('.js_list');
+const favList = document.querySelector('.js_favs_list');
 
 const button = document.querySelector('.js_submit_button');
 
@@ -47,7 +48,7 @@ let listItem;
 function displayResults(){
   let html = '';
   for (let i = 0; i < shows.length; i++) {
-    html += `<li class="list_item js_list_item">`;
+    html += `<li class="list_item js_list_item" id="${shows[i].id}">`;
     if(images[i] === null){
       html += `<img class="img" src="https://via.placeholder.com/210x295/ffffff/666666/?text=TV" alt="movie cover">`;
     }
@@ -72,14 +73,22 @@ function listenFavs(){
 }
 
 let favorites = [];
+
 function handleListItems(ev){
-  const favorited = ev.currentTarget;
+  const favorited = ev.currentTarget.id;
   console.log(favorited);
   favorites.push(favorited);
   console.log(favorites);
 }
 
-
+function displayFavsList(){
+  let html = '';
+  html += `<li class="fav_item js_fav_item">`;
+  html += `<img class="img" src="" alt="movie cover">`;
+  html += `<h2 class="movie_title">Movie Title</h2>`;
+  html += `</li>`;
+  favList.innerHTML = html;
+}
 
 
 function handleButton(ev){
