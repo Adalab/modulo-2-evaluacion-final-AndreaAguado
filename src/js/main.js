@@ -56,9 +56,12 @@ function displayResults(){
   }
 }
 
+let favorites = [];
 function handleListItems(ev){
   const favorited = ev.currentTarget;
   console.log(favorited);
+  favorites.push(favorited);
+  console.log(favorites);
 }
 
 function handleButton(ev){
