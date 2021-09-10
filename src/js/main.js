@@ -90,14 +90,20 @@ function handleListItems(ev){
     favorites.push(objetClicked);
   }
   console.log(favorites);
+  displayFavsList();
 }
+
+
 
 function displayFavsList(){
   let html = '';
-  html += `<li class="fav_item js_fav_item" id="">`;
-  html += `<img class="img" src="" alt="movie cover">`;
-  html += `<h2 class="movie_title">Movie Title</h2>`;
-  html += `</li>`;
+  for (const favorite of favorites) {
+    html += `<li class="fav_item js_fav_item" id="${favorite.id}">`;
+    html += `<img class="img" src="${favorite.image.medium}" alt="movie cover">`;
+    html += `<h2 class="movie_title">${favorite.name}</h2>`;
+    html += `</li>`;
+  }
+
   favList.innerHTML = html;
 }
 
