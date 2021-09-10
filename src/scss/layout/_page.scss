@@ -1,14 +1,15 @@
 .body {
   height: 100vh;
-  background-color: lightskyblue;
+  width: 100%;
   background-color: $light_blue;
   color: $dark_brown;
   font-family: monospace;
+  font-size: 18px;
 }
 .main {
   min-height: 70%;
   padding: 30px 30px 30px 30px;
-  background-color: #ffeeed;
+  background-color: $light_pink;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -64,29 +65,29 @@
   }
   .right_section {
     min-width: 70%;
-  }
-  .list {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    flex-wrap: wrap;
-    .list_item {
+    .list {
       display: flex;
-      flex-direction: column;
+      flex-direction: row;
       justify-content: center;
-      align-items: center;
-      margin: 10px 10px 10px 10px;
-      .img {
-        height: 80%;
+      flex-wrap: wrap;
+      .list_item {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
         margin: 10px 10px 10px 10px;
+        .img {
+          height: 80%;
+          margin: 10px 10px 10px 10px;
+        }
       }
     }
-  }
 
-  .fav {
-    background-color: mediumvioletred;
-    background-color: $darkish_pink;
-    color: $light_blue;
-    font-weight: bold;
+    .fav {
+      background-color: mediumvioletred;
+      background-color: $darkish_pink;
+      color: $light_blue;
+      font-weight: bold;
+    }
   }
 }
