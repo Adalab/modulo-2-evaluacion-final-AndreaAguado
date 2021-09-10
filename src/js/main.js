@@ -78,7 +78,16 @@ let favorites = [];
 function handleListItems(ev){
   const favorited = ev.currentTarget.id;
   console.log(favorited);
-  favorites.push(favorited);
+  const objetClicked = shows.find((show) => {
+    return show.id === parseInt(favorited);
+  });
+  console.log(objetClicked);
+  const favoritesFoundIndex = favorites.findIndex((fav) => {
+    return fav.id === parseInt(favorited);
+  });
+  if(favoritesFoundIndex === -1){
+    favorites.push(objetClicked);
+  }
   console.log(favorites);
 }
 
