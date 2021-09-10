@@ -130,6 +130,7 @@ function displayFavsList(){
       html += `<img class="img" src="${favorite.image.medium}" alt="movie cover">`;
     }
     html += `<h2 class="movie_title">${favorite.name}</h2>`;
+    html += `<button class="reset_button js_reset_button">X</button>`;
     html += `</li>`;
   }
 
