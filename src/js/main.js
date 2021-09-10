@@ -100,7 +100,6 @@ function getFromLocalStorage(){
 
 getFromLocalStorage();
 
-// let resetButton;
 function displayFavsList(){
   let html = '';
   for (const favorite of favorites) {
@@ -116,8 +115,6 @@ function displayFavsList(){
     html += `</li>`;
     favList.innerHTML = html;
   }
-  // favList.innerHTML = html;
-  resetButton;
   listenResetButtons();
 }
 
