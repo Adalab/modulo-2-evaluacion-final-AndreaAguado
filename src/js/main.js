@@ -32,7 +32,13 @@ let listItem;
 function displayResults(){
   let html = '';
   for (let i = 0; i < shows.length; i++) {
-    html += `<li class="list_item js_list_item" id="${shows[i].id}">`;
+    const isInFaves = isFavorite(shows[i]);
+    if(isInFaves){
+      html += `<li class="list_item js_list_item fav" id="${shows[i].id}">`;
+    }
+    else{
+      html += `<li class="list_item js_list_item" id="${shows[i].id}">`;
+    }
     if(shows[i].image === null){
       html += `<img class="img" src="https://via.placeholder.com/210x295/ffffff/666666/?text=TV" alt="movie cover">`;
     }
@@ -41,8 +47,9 @@ function displayResults(){
     }
     html += `  <h2 class="movie_title">${shows[i].name}</h2>`;
     html += `</li>`;
-    list.innerHTML = html;
+    // list.innerHTML = html;
   }
+  list.innerHTML = html;
 
   listenFavs();
 }
@@ -54,6 +61,19 @@ function listenFavs(){
     item.addEventListener('click',handleListItems);
   }
 }
+
+function isFavorite(show) {
+  const favoriteFound = favorites.find((fav) => {
+    return fav.id === show.id;
+  });
+
+  if (favoriteFound === undefined) {
+    return false;
+  } else {
+    return true;
+  }
+}
+
 
 let favorites = [];
 
