@@ -135,6 +135,13 @@ function displayFavsList(){
   }
 
   favList.innerHTML = html;
+  const resetButton = document.querySelectorAll('.js_reset_button');
+}
+
+function listenResetButtons(){
+  for (const reset of resetButton) {
+    reset.addEventListener('click',handleResetButton);
+  }
 }
 
 
@@ -142,6 +149,10 @@ function handleButton(ev){
   ev.preventDefault();
   urlMaker();
   requestToAPI();
+}
+
+function handleResetButton(ev){
+  
 }
 
 
