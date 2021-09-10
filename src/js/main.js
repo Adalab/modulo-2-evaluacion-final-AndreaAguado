@@ -88,7 +88,7 @@ function getFromLocalStorage(){
   if(dataRetrieved === null){
     let html = '';
     html += `<li class="fav_item js_fav_item">`;
-    html += `Aun no tienes favoritos`;
+    html += `Aun no tienes favoritos.`;
     html += `</li>`;
     favList.innerHTML = html;
   }
@@ -102,19 +102,25 @@ getFromLocalStorage();
 
 function displayFavsList(){
   let html = '';
-  for (const favorite of favorites) {
-    html += `<li class="fav_item js_fav_item" id="${favorite.id}">`;
-    if(favorite.image === null){
-      html += `<img class="img" src="https://via.placeholder.com/210x295/ffffff/666666/?text=TV"  alt="movie cover">`;
-    }
-    else{
-      html += `<img class="img" src="${favorite.image.medium}" alt="movie cover">`;
-    }
-    html += `<h2 class="movie_title">${favorite.name}</h2>`;
-    html += `<button class="reset_button js_reset_button" id="${favorite.id}">X</button>`;
-    html += `</li>`;
-    favList.innerHTML = html;
+  if(favorites.length === 0 || favorites === null){
+    html += `Aun no tienes favoritos.`;
   }
+  else {
+    for (const favorite of favorites) {
+      html += `<li class="fav_item js_fav_item" id="${favorite.id}">`;
+      if(favorite.image === null){
+        html += `<img class="img" src="https://via.placeholder.com/210x295/ffffff/666666/?text=TV"  alt="movie cover">`;
+      }
+      else{
+        html += `<img class="img" src="${favorite.image.medium}" alt="movie cover">`;
+      }
+      html += `<h2 class="movie_title">${favorite.name}</h2>`;
+      html += `<button class="reset_button js_reset_button" id="${favorite.id}">X</button>`;
+      html += `</li>`;
+    }
+  }
+
+  favList.innerHTML = html;
   listenResetButtons();
 }
 
@@ -126,6 +132,7 @@ function listenResetButtons(){
 }
 
 function handleResetButton(ev){
+  ev.preventDefault();
   const toDelete = ev.currentTarget.id;
   console.log(toDelete);
   const objetClickedIndex = favorites.findIndex((show) => {
