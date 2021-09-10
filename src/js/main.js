@@ -77,6 +77,9 @@ let favorites = [];
 
 function handleListItems(ev){
   const favorited = ev.currentTarget.id;
+  const currentCard = ev.currentTarget;
+  console.log(currentCard);
+  currentCard.classList.add('fav');
   console.log(favorited);
   const objetClicked = shows.find((show) => {
     return show.id === parseInt(favorited);
@@ -93,7 +96,9 @@ function handleListItems(ev){
   displayFavsList();
 }
 
+// function colorShowCard(){
 
+// }
 
 function displayFavsList(){
   let html = '';
