@@ -34,6 +34,7 @@ function requestToAPI(){
     });
 }
 
+let listItem;
 function displayResults(){
   let html = '';
   for (let i = 0; i < shows.length; i++) {
@@ -45,11 +46,13 @@ function displayResults(){
       html += `<img class="img" src=${images[i].medium} alt="movie cover">`;
     }
     html += `  <h2 class="movie_title">${showTitles[i]}</h2>`;
-    html += `<h2 class="movie_title">Movie Title</h2>`;
     html += `</li>`;
     list.innerHTML = html;
   }
+  listItem = document.querySelectorAll('.js_list_item');
+  console.log(listItem);
 }
+
 
 
 function handleButton(ev){
