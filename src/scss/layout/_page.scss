@@ -3,12 +3,12 @@
   background-color: lightskyblue;
   background-color: $light_blue;
   color: $dark_brown;
+  font-family: monospace;
 }
 .main {
   min-height: 70%;
   padding: 30px 30px 30px 30px;
-  background-color: $darkish_pink;
-  // background-color: #ffeeed;
+  background-color: #ffeeed;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -20,14 +20,27 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    .input {
-      display: block;
-      margin-bottom: 10px;
-      height: 30px;
+    .form {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      .input {
+        // display: block;
+        margin-bottom: 10px;
+        height: 30px;
+        min-width: 200px;
+      }
+      .submit_button {
+        height: 30px;
+        font-family: monospace;
+        font-size: 20px;
+      }
     }
     .title {
       font-size: 30px;
-      font-weight: bold;
+      font-family: monospace;
+      // font-weight: bold;
     }
     .favs_list {
       min-width: 80%;
@@ -51,8 +64,6 @@
   }
   .right_section {
     min-width: 70%;
-    // background-color: crimson;
-    background-color: $light_pink;
   }
   .list {
     display: flex;
@@ -67,6 +78,7 @@
       margin: 10px 10px 10px 10px;
       .img {
         height: 80%;
+        margin: 10px 10px 10px 10px;
       }
     }
   }
@@ -74,7 +86,6 @@
   .fav {
     background-color: mediumvioletred;
     background-color: $darkish_pink;
-    color: aqua;
     color: $light_blue;
     font-weight: bold;
   }
