@@ -126,8 +126,16 @@ function listenResetButtons(){
 }
 
 function handleResetButton(ev){
-  const toDelete = ev.currentTarget;
+  const toDelete = ev.currentTarget.id;
   console.log(toDelete);
+  const objetClickedIndex = favorites.findIndex((show) => {
+    return show.id === parseInt(toDelete);
+  });
+  favorites.splice(objetClickedIndex,1);
+  console.log(favorites);
+  console.log(favorites.length);
+  displayFavsList();
+  // saveToLocalStorage();
 }
 
 
