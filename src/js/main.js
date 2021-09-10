@@ -15,11 +15,6 @@ function urlMaker(){
 }
 
 let shows = [];
-// let images = [];
-// let showTitles = [];
-// let showsId = [];
-// showTitles = {};
-// let showsInfo = [];
 function requestToAPI(){
   url=urlMaker();
   fetch(url)
@@ -28,18 +23,8 @@ function requestToAPI(){
       console.log(data);
       for (let i = 0; i < data.length; i++) {
         shows[i]=data[i].show;
-        // images[i]=shows[i].image;
-        // showTitles[i]=shows[i].name;
-        // showsId[i]=shows[i].id;
-        // showTitles['id']=shows[i].id;
-        // showTitles['name']=shows[i].name;
-        // showsInfo.push(showTitles);
       }
       console.log(shows);
-      // console.log(images);
-      // console.log(showTitles);
-      // console.log(showsId);
-      // console.log(showsInfo);
       displayResults();
     });
 }
@@ -53,10 +38,8 @@ function displayResults(){
       html += `<img class="img" src="https://via.placeholder.com/210x295/ffffff/666666/?text=TV" alt="movie cover">`;
     }
     else{
-      // html += `<img class="img" src=${images[i].medium} alt="movie cover">`;
       html += `<img class="img" src=${shows[i].image.medium} alt="movie cover">`;
     }
-    // html += `  <h2 class="movie_title">${showTitles[i]}</h2>`;
     html += `  <h2 class="movie_title">${shows[i].name}</h2>`;
     html += `</li>`;
     list.innerHTML = html;
@@ -104,7 +87,6 @@ function saveToLocalStorage(){
 function getFromLocalStorage(){
   let dataRetrieved = JSON.parse(localStorage.getItem('favorites'));
   if(dataRetrieved === null){
-    // requestToAPI();
     let html = '';
     html += `<li class="fav_item js_fav_item">`;
     html += `Aun no tienes favoritos`;
