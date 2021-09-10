@@ -94,11 +94,16 @@ function handleListItems(ev){
   }
   console.log(favorites);
   displayFavsList();
+  saveToLocalStorage();
 }
 
-// function colorShowCard(){
+function saveToLocalStorage(){
+  localStorage.setItem('favorites',JSON.stringify(favorites));
+}
 
-// }
+function getFromLocalStorage(){
+  let dataRetrieved = JSON.parse(localStorage.getItem('favorites'));
+}
 
 function displayFavsList(){
   let html = '';
