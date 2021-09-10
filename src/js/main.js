@@ -51,9 +51,15 @@ function displayResults(){
   }
   listItem = document.querySelectorAll('.js_list_item');
   console.log(listItem);
+  for (const item of listItem) {
+    item.addEventListener('click',handleListItems);
+  }
 }
 
-
+function handleListItems(ev){
+  const favorited = ev.currentTarget;
+  console.log(favorited);
+}
 
 function handleButton(ev){
   ev.preventDefault();
