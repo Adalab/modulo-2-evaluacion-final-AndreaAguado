@@ -82,6 +82,7 @@ function handleListItems(ev){
     return show.id === parseInt(favorited);
   });
   console.log(objetClicked);
+  // favoritesFoundIndex finds the element with the same id as they one clicked and returns its position in the array. If its not in the list of favorites it will be included but if it was already there the list will not vary.
   const favoritesFoundIndex = favorites.findIndex((fav) => {
     return fav.id === parseInt(favorited);
   });
