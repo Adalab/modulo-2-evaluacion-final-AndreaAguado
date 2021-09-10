@@ -135,7 +135,7 @@ function handleResetButton(ev){
   console.log(favorites);
   console.log(favorites.length);
   displayFavsList();
-  // saveToLocalStorage();
+  saveToLocalStorage();
 }
 
 
