@@ -101,6 +101,7 @@ function getFromLocalStorage(){
 
 getFromLocalStorage();
 
+let resetButton;
 function displayFavsList(){
   let html = '';
   for (const favorite of favorites) {
@@ -117,7 +118,8 @@ function displayFavsList(){
   }
 
   favList.innerHTML = html;
-  const resetButton = document.querySelectorAll('.js_reset_button');
+  resetButton = document.querySelectorAll('.js_reset_button');
+  listenResetButtons();
 }
 
 function listenResetButtons(){
