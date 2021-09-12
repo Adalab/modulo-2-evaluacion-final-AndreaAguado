@@ -161,7 +161,7 @@ function displayFavsList(){
 
   favList.innerHTML = html;
   listenResetButtons();
-  deleteButton = document.querySelector('.js_delete_button');
+  listenDeleteButton();
 }
 
 function listenResetButtons(){
@@ -185,6 +185,17 @@ function handleResetButton(ev){
   saveToLocalStorage();
 }
 
+function listenDeleteButton(){
+  deleteButton = document.querySelector('.js_delete_button');
+  deleteButton.addEventListener('click', handleDeleteButton);
+}
+
+function handleDeleteButton(ev){
+  ev.preventDefault();
+  favorites = [];
+  displayFavsList();
+  saveToLocalStorage();
+}
 
 function handleButton(ev){
   ev.preventDefault();
