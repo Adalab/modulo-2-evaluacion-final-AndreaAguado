@@ -28,7 +28,6 @@
       flex-direction: row;
       align-items: center;
       .input {
-        // display: block;
         margin-bottom: 10px;
         height: 30px;
         min-width: 200px;
@@ -43,7 +42,6 @@
     .title {
       font-size: 30px;
       font-family: monospace;
-      // font-weight: bold;
     }
     .favs_list {
       background-color: $darkish_pink;
@@ -73,6 +71,7 @@
       display: flex;
       flex-direction: row;
       justify-content: center;
+      align-items: flex-start;
       flex-wrap: wrap;
       .list_item {
         max-width: 25%;
@@ -89,7 +88,6 @@
     }
 
     .fav {
-      background-color: mediumvioletred;
       background-color: $darkish_pink;
       color: $light_blue;
       font-weight: bold;
