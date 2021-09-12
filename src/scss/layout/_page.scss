@@ -98,6 +98,9 @@
   //  start RIGHT SECTION
   .right_section {
     width: 70%;
+    .message {
+      margin: 30px auto 0 auto;
+    }
     .list {
       display: flex;
       flex-direction: row;

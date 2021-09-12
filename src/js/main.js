@@ -68,9 +68,9 @@ function listenFavs(){
 function displayNoResults(){
   if(shows.length < 1){
     let html = '';
-    html += `<li class="list_item js_list_item">`;
+    html += `<p class="message">`;
     html += `No se encontraron resultados para "${input.value}"`;
-    html += `</li>`;
+    html += `</p>`;
     list.innerHTML = html;
   }
   else{
