@@ -5,6 +5,7 @@ const list = document.querySelector('.js_list');
 const favList = document.querySelector('.js_favs_list');
 const button = document.querySelector('.js_submit_button');
 let resetButton;
+let deleteButton;
 
 let url;
 function urlMaker(){
@@ -154,10 +155,13 @@ function displayFavsList(){
       html += `<button class="reset_button js_reset_button" id="${favorite.id}">X</button>`;
       html += `</li>`;
     }
+
+    html += `<button class="delete_button js_delete_button">Borrar todos</button>`;
   }
 
   favList.innerHTML = html;
   listenResetButtons();
+  deleteButton = document.querySelector('.js_delete_button');
 }
 
 function listenResetButtons(){
