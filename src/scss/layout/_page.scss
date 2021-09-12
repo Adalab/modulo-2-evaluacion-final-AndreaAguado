@@ -15,6 +15,7 @@
   justify-content: center;
   align-items: flex-start;
 
+  // start LEFT SECTION
   .left_section {
     width: 30%;
     background-color: $light_yellow;
@@ -62,11 +63,21 @@
           margin-right: 10px;
         }
       }
+      .delete_button {
+        // margin: auto;
+        // margin-top: 15px;
+        // margin-bottom: 15px;
+        font-family: monospace;
+        font-size: 16px;
+        height: 30px;
+        margin: 15px auto 15px auto;
+      }
     }
   }
+  // end LEFT SECTION
+  //  start RIGHT SECTION
   .right_section {
     width: 70%;
-    background-color: $light_blue;
     .list {
       display: flex;
       flex-direction: row;
@@ -93,4 +104,5 @@
       font-weight: bold;
     }
   }
+  // end RIGHT SECTION
 }
