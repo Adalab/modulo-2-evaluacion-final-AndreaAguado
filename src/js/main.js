@@ -146,12 +146,15 @@ function displayFavsList(){
     for (const favorite of favorites) {
       html += `<li class="fav_item js_fav_item" id="${favorite.id}">`;
       if(favorite.image === null){
+        html += `<div class="fav_item_info">`;
         html += `<img class="img" src="https://via.placeholder.com/210x295/b5a899/736762/?text=TV"  alt="movie cover">`;
       }
       else{
+        html += `<div class="fav_item_info">`;
         html += `<img class="img" src="${favorite.image.medium}" alt="movie cover">`;
       }
       html += `<h2 class="movie_title">${favorite.name}</h2>`;
+      html += `</div>`;
       html += `<button class="reset_button js_reset_button" id="${favorite.id}">X</button>`;
       html += `</li>`;
     }
