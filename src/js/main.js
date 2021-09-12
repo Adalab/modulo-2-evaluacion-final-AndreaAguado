@@ -15,6 +15,7 @@ function urlMaker(){
 
 let shows = [];
 function requestToAPI(){
+  shows = [];
   url=urlMaker();
   fetch(url)
     .then(response => response.json())
