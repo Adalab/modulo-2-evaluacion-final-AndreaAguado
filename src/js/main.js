@@ -187,14 +187,19 @@ function handleResetButton(ev){
 
 function listenDeleteButton(){
   deleteButton = document.querySelector('.js_delete_button');
+  console.log(deleteButton);
   deleteButton.addEventListener('click', handleDeleteButton);
 }
 
 function handleDeleteButton(ev){
   ev.preventDefault();
   favorites = [];
+  removeFromLocalStorage();
   displayFavsList();
-  saveToLocalStorage();
+}
+
+function removeFromLocalStorage(){
+  localStorage.removeItem('favorites');
 }
 
 function handleButton(ev){
