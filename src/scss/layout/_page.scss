@@ -34,6 +34,9 @@
         min-width: 200px;
         border: $dark_brown solid 3px;
         border-radius: 5px;
+        color: $dark_brown;
+        font-family: monospace;
+        font-size: 16px;
       }
       .submit_button {
         height: 30px;
@@ -42,9 +45,10 @@
         margin-left: 10px;
         border: $dark_brown solid 3px;
         border-radius: 5px;
+        background-color: $light_blue;
       }
       .submit_button:hover {
-        background-color: $light_blue;
+        background-color: $darkish_pink;
       }
     }
     .title {
@@ -80,9 +84,10 @@
           font-family: monospace;
           font-size: 18px;
           font-weight: bold;
+          background-color: $light_blue;
         }
         .reset_button:hover {
-          background-color: $light_blue;
+          background-color: $darkish_pink;
         }
       }
       .delete_button {
@@ -92,9 +97,10 @@
         font-size: 16px;
         height: 30px;
         margin: 15px auto 15px auto;
+        background-color: $light_blue;
       }
       .delete_button:hover {
-        background-color: $light_blue;
+        background-color: $darkish_pink;
       }
     }
   }
@@ -119,8 +125,11 @@
         align-items: center;
         margin: 10px 10px 10px 10px;
         .img {
-          height: 80%;
-          margin: 10px 10px 10px 10px;
+          width: 85%;
+          margin: 15px 10px 10px 10px;
+        }
+        .movie_title {
+          margin-bottom: 10px;
         }
       }
     }
