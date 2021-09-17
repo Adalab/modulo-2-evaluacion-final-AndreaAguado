@@ -4,6 +4,7 @@ const input = document.querySelector('.js_input');
 const list = document.querySelector('.js_list');
 const favList = document.querySelector('.js_favs_list');
 const button = document.querySelector('.js_submit_button');
+const buttonLog = document.querySelector('.js_button_log');
 let resetButton;
 let deleteButton;
 
@@ -49,6 +50,7 @@ function displayResults(){
       html += `<img class="img" src=${shows[i].image.medium} alt="movie cover">`;
     }
     html += `  <h2 class="movie_title">${shows[i].name}</h2>`;
+    html += `<p>Idioma:  ${shows[i].language}</p>`;
     html += `</li>`;
     // list.innerHTML = html;
   }
@@ -90,6 +92,13 @@ function isFavorite(show) {
     return true;
   }
 }
+
+function handleButtonLog(ev){
+  ev.preventDefault();
+  console.log(favorites.length);
+}
+
+buttonLog.addEventListener('click',handleButtonLog);
 
 function handleListItems(ev){
   const favorited = ev.currentTarget.id;
