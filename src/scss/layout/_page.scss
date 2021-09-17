@@ -38,8 +38,10 @@
         color: $dark_brown;
         font-family: monospace;
         font-size: 16px;
+        padding-left: 5px;
       }
       .submit_button {
+        color: $dark_brown;
         height: 30px;
         font-family: monospace;
         font-size: 20px;
@@ -87,12 +89,14 @@
           font-size: 18px;
           font-weight: bold;
           background-color: $light_blue;
+          color: $dark_brown;
         }
         .reset_button:hover {
           background-color: $darkish_pink;
         }
       }
       .delete_button {
+        color: $dark_brown;
         font-family: monospace;
         border: $dark_brown solid 3px;
         border-radius: 5px;
@@ -100,6 +104,7 @@
         height: 30px;
         margin: 15px auto 15px auto;
         background-color: $light_blue;
+        font-weight: bold;
       }
       .delete_button:hover {
         background-color: $darkish_pink;
