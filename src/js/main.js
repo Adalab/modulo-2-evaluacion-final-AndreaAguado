@@ -39,6 +39,7 @@ function displayResults(){
     else{
       html += `<li class="list_item js_list_item" id="${shows[i].id}">`;
     }
+    html += `<div class="container">`;
     if(shows[i].image === null){
       html += `<img class="img" src="https://via.placeholder.com/210x295/b5a899/736762/?text=TV" alt="movie cover">`;
     }
@@ -46,8 +47,8 @@ function displayResults(){
       html += `<img class="img" src=${shows[i].image.medium} alt="movie cover">`;
     }
     html += `  <h2 class="movie_title">${shows[i].name}</h2>`;
+    html += `</div>`;
     html += `</li>`;
-    // list.innerHTML = html;
   }
   list.innerHTML = html;
 
