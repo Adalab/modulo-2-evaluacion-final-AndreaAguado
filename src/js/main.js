@@ -21,12 +21,9 @@ function requestToAPI(){
   fetch(url)
     .then(response => response.json())
     .then((data) => {
-      console.log(data);
       for (let i = 0; i < data.length; i++) {
         shows[i]=data[i].show;
       }
-      console.log(shows);
-      // displayResults();
       displayNoResults();
     });
 }
@@ -59,7 +56,6 @@ function displayResults(){
 
 function listenFavs(){
   listItem = document.querySelectorAll('.js_list_item');
-  console.log(listItem);
   for (const item of listItem) {
     item.addEventListener('click',handleListItems);
   }
@@ -94,13 +90,10 @@ function isFavorite(show) {
 function handleListItems(ev){
   const favorited = ev.currentTarget.id;
   const currentCard = ev.currentTarget;
-  console.log(currentCard);
   currentCard.classList.toggle('fav');
-  console.log(favorited);
   const objetClicked = shows.find((show) => {
     return show.id === parseInt(favorited);
   });
-  console.log(objetClicked);
   // favoritesFoundIndex finds the element with the same id as they one clicked and returns its position in the array. If its not in the list of favorites it will be included but if it was already there the list will not vary.
   const favoritesFoundIndex = favorites.findIndex((fav) => {
     return fav.id === parseInt(favorited);
@@ -111,7 +104,6 @@ function handleListItems(ev){
   else{
     favorites.splice(favoritesFoundIndex,1);
   }
-  console.log(favorites);
   displayFavsList();
   saveToLocalStorage();
 }
@@ -177,20 +169,16 @@ function listenResetButtons(){
 function handleResetButton(ev){
   ev.preventDefault();
   const toDelete = ev.currentTarget.id;
-  console.log(toDelete);
   const objetClickedIndex = favorites.findIndex((show) => {
     return show.id === parseInt(toDelete);
   });
   favorites.splice(objetClickedIndex,1);
-  console.log(favorites);
-  console.log(favorites.length);
   displayFavsList();
   saveToLocalStorage();
 }
 
 function listenDeleteButton(){
   deleteButton = document.querySelector('.js_delete_button');
-  console.log(deleteButton);
   deleteButton.addEventListener('click', handleDeleteButton);
 }
 
