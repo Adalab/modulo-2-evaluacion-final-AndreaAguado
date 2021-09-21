@@ -116,11 +116,11 @@ function saveToLocalStorage(){
 function getFromLocalStorage(){
   let dataRetrieved = JSON.parse(localStorage.getItem('favorites'));
   if(dataRetrieved === null){
-    let html = '';
-    html += `<li class="fav_item js_fav_item">`;
-    html += `Aun no tienes favoritos.`;
-    html += `</li>`;
-    favList.innerHTML = html;
+    const newLiElement = document.createElement('li');
+    newLiElement.classList.add('fav_item');
+    const newLiContent = document.createTextNode('Aun no tienes favoritos.');
+    newLiElement.appendChild(newLiContent);
+    favList.appendChild(newLiElement);
   }
   else{
     favorites = dataRetrieved;
