@@ -64,11 +64,11 @@ function listenFavs(){
 
 function displayNoResults(){
   if(shows.length < 1){
-    let html = '';
-    html += `<p class="message">`;
-    html += `No se encontraron resultados para "${input.value}"`;
-    html += `</p>`;
-    list.innerHTML = html;
+    const newParagraph = document.createElement('p');
+    newParagraph.classList.add('message');
+    const newMessage = document.createTextNode(`No se encontraron resultados para "${input.value}"`);
+    newParagraph.appendChild(newMessage);
+    list.appendChild(newParagraph);
   }
   else{
     displayResults();
