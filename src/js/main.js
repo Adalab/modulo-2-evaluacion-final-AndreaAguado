@@ -196,7 +196,7 @@ function removeFromLocalStorage(){
 
 function handleButton(ev){
   ev.preventDefault();
-  urlMaker();
+  // urlMaker();
   requestToAPI();
 }
 
