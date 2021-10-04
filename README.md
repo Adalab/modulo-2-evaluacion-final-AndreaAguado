@@ -1,8 +1,8 @@
 ![hello kitty taping in a keyboard gif](https://media.tenor.com/images/78aae22c08c21fe665304fbdaab324fd/tenor.gif)
 
-# Module # 1 - Final evaluation exercise
+# Module # 2 - Final evaluation exercise
 
-Hi! I'm Andrea Aguado :) and this repository was made to complete the final exercise of the Module 1 at the Adalab programming course.
+Hi! I'm Andrea Aguado :) and this repository was made to complete the final exercise of the Module 2 at the Adalab programming course.
 This exercise is meant to show my newly acquired skills in **HTML, CSS and Javascript** 😊
 I parted from a pre-made Starter Kit that included pretty much everything needed to create the proyect, like an HTML template engine, the SASS preprocessor and much more.
 
